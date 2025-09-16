@@ -6,18 +6,23 @@ const NavigationBar = () => {
 
   const handleScroll = (e, id) => {
     e.preventDefault();
-    const section = document.getElementById(id);
+    e.stopPropagation();
     
-    if (section) {
-      const yOffset = -80; // navbar height
-      const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    } else {
-      console.log(`Section with ID "${id}" not found. Make sure you have elements with these IDs on your page.`);
-    }
-    
-    // Close mobile menu after clicking a link
+    // Close mobile menu first
     setIsMenuOpen(false);
+    
+    // Add a small delay to ensure menu closes before scrolling
+    setTimeout(() => {
+      const section = document.getElementById(id);
+      
+      if (section) {
+        const yOffset = -80; // navbar height
+        const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      } else {
+        console.log(`Section with ID "${id}" not found. Make sure you have elements with these IDs on your page.`);
+      }
+    }, 100);
   };
 
   const toggleMenu = () => {
@@ -28,13 +33,13 @@ const NavigationBar = () => {
     <nav className="navbar">
       <div className="nav-container">
         <div className="logo">
-            <a 
-              href="#hero" 
-              onClick={(e) => handleScroll(e, 'hero')}
-              onTouchStart={() => {}} // Enable touch events
-            >
+          <a 
+            href="#hero"
+            onClick={(e) => handleScroll(e, 'hero')}
+            onTouchStart={() => {}} // Enable touch events
+          >
             <p>Tejindra</p>
-            </a>
+          </a>
         </div>
         
         {/* Hamburger Menu Button */}
@@ -52,36 +57,49 @@ const NavigationBar = () => {
         <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
           <li>
             <a 
-              href="#hero" 
+              href="#about"
               onClick={(e) => handleScroll(e, 'about')}
-              onTouchStart={() => {}} // Enable touch events
+              onTouchEnd={(e) => {
+                // Prevent double firing on mobile
+                e.preventDefault();
+                handleScroll(e, 'about');
+              }}
             >
               About
             </a>
           </li>
           <li>
             <a 
-              href="#experience" 
+              href="#experience"
               onClick={(e) => handleScroll(e, 'experience')}
-              onTouchStart={() => {}} // Enable touch events
+              onTouchEnd={(e) => {
+                e.preventDefault();
+                handleScroll(e, 'experience');
+              }}
             >
               Experience
             </a>
           </li>
           <li>
             <a 
-              href="#projects" 
+              href="#projects"
               onClick={(e) => handleScroll(e, 'projects')}
-              onTouchStart={() => {}} // Enable touch events
+              onTouchEnd={(e) => {
+                e.preventDefault();
+                handleScroll(e, 'projects');
+              }}
             >
               Projects
             </a>
           </li>
           <li>
             <a 
-              href="#contact" 
+              href="#contact"
               onClick={(e) => handleScroll(e, 'contact')}
-              onTouchStart={() => {}} // Enable touch events
+              onTouchEnd={(e) => {
+                e.preventDefault();
+                handleScroll(e, 'contact');
+              }}
             >
               Contact
             </a>

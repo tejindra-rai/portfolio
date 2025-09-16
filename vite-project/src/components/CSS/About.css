@@ -29,17 +29,22 @@
   width: 320px;
   height: 320px;
   border-radius: 20px;
-  overflow: hidden;
   object-fit: cover;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
   border: 4px solid white;
-  transition: transform 0.2s ease;
+  /* Optimized transitions - use transform and opacity only */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Hardware acceleration */
+  will-change: transform;
+  /* Prevent sub-pixel rendering issues */
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .about-image img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-
+  transform: translateZ(0) scale(1.05);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
 }
 
 /* Right Side - Content */
@@ -73,13 +78,19 @@
   padding: 1.5rem;
   background: white;
   box-shadow: 0 4px 15px rgba(30, 41, 59, 0.08);
-  transition: all 0.3s ease;
   text-align: center;
+  /* Optimized transitions */
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Hardware acceleration */
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .about-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(30, 41, 59, 0.15);
+  transform: translateZ(0) translateY(-8px);
+  box-shadow: 0 15px 35px rgba(30, 41, 59, 0.15);
 }
 
 .about-card h3 {
@@ -93,12 +104,20 @@
   font-size: 0.95rem;
   color: #475569;
   line-height: 1.4;
+  margin: 0;
 }
 
 .about-icon {
   font-size: 2rem;
   color: #334155;
   margin-bottom: 0.5rem;
+  /* Optimize icon rendering */
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.about-card:hover .about-icon {
+  transform: scale(1.1);
 }
 
 /* Description Text */
@@ -106,6 +125,7 @@
   font-size: 1.1rem;
   color: #475569;
   line-height: 1.7;
+  margin: 0;
 }
 
 /* Responsive Breakpoints - Match Body.css */
@@ -161,6 +181,15 @@
   .about-content h2 {
     font-size: 2rem;
   }
+
+  /* Reduce hover effects on mobile */
+  .about-image img:hover {
+    transform: translateZ(0) scale(1.02);
+  }
+
+  .about-card:hover {
+    transform: translateZ(0) translateY(-4px);
+  }
 }
 
 @media (max-width: 480px) {
@@ -184,6 +213,15 @@
   .about-card {
     padding: 1rem;
   }
+
+  /* Disable hover effects on small mobile */
+  .about-image img:hover {
+    transform: none;
+  }
+
+  .about-card:hover {
+    transform: none;
+  }
 }
 
 @media (max-width: 360px) {
@@ -198,5 +236,20 @@
 
   .about-card h3 {
     font-size: 1rem;
+  }
+}
+
+/* Performance optimizations for older devices */
+@media (prefers-reduced-motion: reduce) {
+  .about-image img,
+  .about-card,
+  .about-icon {
+    transition: none;
+  }
+
+  .about-image img:hover,
+  .about-card:hover,
+  .about-card:hover .about-icon {
+    transform: none;
   }
 }

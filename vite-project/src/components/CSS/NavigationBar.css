@@ -31,6 +31,28 @@
   justify-content: center;
 }
 
+#hero {
+  min-height: 100vh;
+  background-color: #ffffff;
+  text-align: center;
+  scroll-margin-top: 80px;
+  padding: 5rem 1rem 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#experience {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  text-align: center;
+  scroll-margin-top: 80px;
+  padding: 5rem 1rem 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #contact {
   min-height: 100vh;
   background-color: #f3f4f6;
@@ -59,6 +81,10 @@
   font-size: 2rem;
   font-weight: 700;
   margin: 0;
+}
+
+.logo a {
+  text-decoration: none;
 }
 
 .logo p {
@@ -146,6 +172,7 @@
     padding: 2rem 0;
     box-shadow: -2px 0 10px rgba(0,0,0,0.1);
     transition: right 0.3s ease;
+    z-index: 999;
   }
 
   .nav-links.open {
@@ -163,11 +190,18 @@
     padding: 1rem 2rem;
     font-size: 1.2rem;
     border-bottom: 1px solid #f0f0f0;
+    /* Improve touch target */
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .nav-links li a:hover {
+  .nav-links li a:hover,
+  .nav-links li a:active {
     background-color: #f8f9fa;
-    border-bottom: 1px solid #3b82f6;
+    border-bottom: 1px solid #01036e;
+    color: #01036e;
   }
 
   .overlay {
@@ -178,7 +212,7 @@
     width: 100%;
     height: calc(100vh - 80px);
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1001;
+    z-index: 998;
   }
 }
 
@@ -209,5 +243,33 @@
   
   .nav-links li a {
     font-size: 1.1rem;
+    padding: 1.2rem 2rem;
+  }
+
+  /* Better touch targets for small screens */
+  .hamburger {
+    padding: 10px;
+  }
+
+  .hamburger span {
+    width: 22px;
+    height: 2px;
+  }
+}
+
+/* Additional mobile-specific improvements */
+@media (max-width: 768px) {
+  /* Prevent text selection on touch */
+  .nav-links li a {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Smooth scrolling for mobile */
+  html {
+    scroll-behavior: smooth;
   }
 }

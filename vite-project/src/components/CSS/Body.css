@@ -109,7 +109,15 @@
   margin: 0 0 1rem 0;
   line-height: 1.1;
   letter-spacing: -0.02em;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
+
+.name:hover {
+  color: #1e293b;
+  text-shadow: 0 4px 8px rgba(30, 41, 59, 0.3);
+}
+
 .role {
   margin-bottom: 2.5rem;
   height: 3rem;
@@ -355,6 +363,11 @@
     width: 250px;
     height: 250px;
   }
+
+  /* Reduce hover effects on mobile */
+  .name:hover {
+    transform: scale(1.02) translateY(-1px);
+  }
 }
 
 @media (max-width: 480px) {
@@ -405,6 +418,16 @@
   .social-link svg {
     width: 20px;
     height: 20px;
+  }
+
+  /* Disable complex animations on small screens */
+  .name:hover {
+    transform: none;
+    animation: none;
+  }
+
+  .name::before {
+    display: none;
   }
 }
 

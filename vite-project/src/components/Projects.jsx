@@ -5,27 +5,27 @@ const Projects = () => {
   const [visibleCards, setVisibleCards] = useState([]);
 
   const projects = [
-    { 
-      title: "Figma Design", 
-      desc: "Design of fashion website in figma.", 
-      link: "https://www.figma.com/proto/KxCJyE1QqlZcqr05zUG5cs/Tejindra_Rai?node-id=285-2460&t=QjrMJDVdhWW5vwW6-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A22",
-      tech: ["React", "CSS3", "JavaScript"],
-      status: "Completed"
-    },
-    { 
-      title: "Kamakhya", 
-      desc: "Smart Pad Vending machine for emergency use with IoT integration and user-friendly interface.", 
-      link: "https://kamakhya.netlify.app/",
-      tech: ["IoT", "Arduino", "Sensors"],
-      status: "Completed"
-    },
-    { 
-      title: "Smart Window", 
-      desc: "IoT based automated window system that responds to weather conditions and user preferences.", 
-      link: "https://www.tinkercad.com/things/i27tbKj30go-smart-window",
-      tech: ["Arduino", "Sensors", "TinkerCAD"],
-      status: "Completed"
-    },
+  { 
+    title: "Elegance Fashion Hub", 
+    desc: "Modern e-commerce fashion platform design with responsive layouts and contemporary UI/UX principles.", 
+    link: "https://www.figma.com/proto/KxCJyE1QqlZcqr05zUG5cs/Tejindra_Rai?node-id=285-2460&t=QjrMJDVdhWW5vwW6-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A22",
+    tech: ["Figma", "UI/UX Design", "Prototyping"],
+    status: "Completed"
+  },
+  { 
+    title: "Kamakhya Smart Vending", 
+    desc: "IoT-powered sanitary pad vending machine with smart inventory management and cashless payments.", 
+    link: "https://kamakhya.netlify.app/",
+    tech: ["IoT", "Arduino", "Web Development"],
+    status: "Completed"
+  },
+  { 
+    title: "Intelligent Window System", 
+    desc: "Automated IoT window system that responds to weather conditions and air quality monitoring.", 
+    link: "https://www.tinkercad.com/things/i27tbKj30go-smart-window",
+    tech: ["Arduino", "IoT Sensors", "TinkerCAD"],
+    status: "Completed"
+  },
   ];
 
   // Animation on scroll
