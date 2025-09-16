@@ -1,0 +1,17 @@
+/* Footer Section */
+footer {
+  background-color: #1f2937; /* gray-800 */
+  color: white;
+  padding: 3.5rem 4rem; /* py-6 */
+  text-align: center;
+  font-size: 1rem;
+  margin: 5px 0 0 0;
+}
+
+/* Responsive: small screens */
+@media (max-width: 768px) {
+  footer {
+    font-size: 0.9rem; /* slightly smaller text on mobile */
+    padding: 1rem 1.5rem;
+  }
+}

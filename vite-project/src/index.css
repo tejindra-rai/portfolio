@@ -1,0 +1,23 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+#hero,
+#about,
+#projects,
+#contact {
+  scroll-margin-top: 80px; /* adjust to your navbar height */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-family: 'Feeling Calm', cursive;
+}
+a{
+  text-decoration: none;
+}
+

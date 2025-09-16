@@ -1,0 +1,356 @@
+/* Experience.css - Enhanced Portfolio Experience Section */
+
+#experience {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 5rem 2rem;
+  scroll-margin-top: 80px;
+  border-radius: 0.6rem;
+  margin: 5px 0 5px 0;
+}
+
+.experience-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Header */
+.experience-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.experience-header .subtitle {
+  font-size: 1.125rem;
+  color: #9ca3af;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.experience-header h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #01036e;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.experience-header p {
+  font-size: 1.25rem;
+  color: #64748b;
+  font-weight: 500;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Skills Categories Grid */
+.skills-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.skill-category {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-category:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.skill-category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease-out;
+}
+
+.skill-category:hover::before {
+  transform: translateX(0);
+}
+
+.category-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #01036e;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.skill-item:hover {
+  transform: translateX(4px);
+}
+
+.skill-check {
+  width: 20px;
+  height: 20px;
+  background: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.skill-check::after {
+  content: '✓';
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.skill-info {
+  flex: 1;
+}
+
+.skill-name {
+  font-weight: 600;
+  color: #01036e;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.skill-level {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Call to Action */
+.experience-cta {
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  border-radius: 1.5rem;
+  padding: 4rem 3rem;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.cta-content h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-primary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.cta-primary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.cta-primary svg {
+  transition: transform 0.2s ease;
+}
+
+.cta-primary:hover svg {
+  transform: translateX(2px);
+}
+
+.cta-secondary {
+  background: white;
+  color: #1e40af;
+  border: 2px solid white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.cta-secondary:hover {
+  background: transparent;
+  color: white;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.cta-secondary svg {
+  transition: transform 0.2s ease;
+}
+
+.cta-secondary:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .skills-categories {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+  
+  .experience-header h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #experience {
+    padding: 4rem 1rem;
+  }
+
+  .experience-header {
+    margin-bottom: 3rem;
+  }
+
+  .experience-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .experience-header p {
+    font-size: 1.125rem;
+  }
+
+  .skills-categories {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .skill-category {
+    padding: 2rem;
+  }
+
+  .skills-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .experience-cta {
+    padding: 3rem 2rem;
+  }
+
+  .cta-content h3 {
+    font-size: 2rem;
+  }
+
+  .cta-content p {
+    font-size: 1.125rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  #experience {
+    padding: 3rem 0.75rem;
+  }
+
+  .experience-header h2 {
+    font-size: 1.875rem;
+  }
+
+  .experience-header p {
+    font-size: 1rem;
+  }
+
+  .skill-category {
+    padding: 1.5rem;
+  }
+
+  .category-title {
+    font-size: 1.25rem;
+  }
+
+  .skill-name {
+    font-size: 0.9rem;
+  }
+
+  .skill-level {
+    font-size: 0.8rem;
+  }
+
+  .cta-content h3 {
+    font-size: 1.75rem;
+  }
+
+  .cta-content p {
+    font-size: 1rem;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    padding: 0.875rem 1.75rem;
+    font-size: 0.9rem;
+  }
+}
