@@ -20,7 +20,6 @@
   flex-wrap: wrap;
 }
 
-/* Left Side - Image */
 .about-image {
   flex-shrink: 0;
 }
@@ -32,12 +31,9 @@
   object-fit: cover;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
   border: 4px solid white;
-  /* Optimized transitions - use transform and opacity only */
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
               box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  /* Hardware acceleration */
   will-change: transform;
-  /* Prevent sub-pixel rendering issues */
   backface-visibility: hidden;
   transform: translateZ(0);
 }
@@ -47,7 +43,6 @@
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
 }
 
-/* Right Side - Content */
 .about-content {
   flex: 1;
   max-width: 600px;
@@ -62,7 +57,6 @@
   letter-spacing: -0.02em;
 }
 
-/* Cards */
 .about-cards {
   display: flex;
   gap: 2rem;
@@ -79,10 +73,8 @@
   background: white;
   box-shadow: 0 4px 15px rgba(30, 41, 59, 0.08);
   text-align: center;
-  /* Optimized transitions */
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
               box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  /* Hardware acceleration */
   will-change: transform;
   backface-visibility: hidden;
   transform: translateZ(0);
@@ -111,7 +103,6 @@
   font-size: 2rem;
   color: #334155;
   margin-bottom: 0.5rem;
-  /* Optimize icon rendering */
   display: block;
   transition: transform 0.2s ease;
 }
@@ -120,7 +111,6 @@
   transform: scale(1.1);
 }
 
-/* Description Text */
 .about-text {
   font-size: 1.1rem;
   color: #475569;
@@ -128,7 +118,6 @@
   margin: 0;
 }
 
-/* Responsive Breakpoints - Match Body.css */
 @media (min-width: 1025px) {
   .about-container {
     gap: 8rem;
@@ -182,7 +171,6 @@
     font-size: 2rem;
   }
 
-  /* Reduce hover effects on mobile */
   .about-image img:hover {
     transform: translateZ(0) scale(1.02);
   }
@@ -213,8 +201,6 @@
   .about-card {
     padding: 1rem;
   }
-
-  /* Disable hover effects on small mobile */
   .about-image img:hover {
     transform: none;
   }
@@ -239,7 +225,6 @@
   }
 }
 
-/* Performance optimizations for older devices */
 @media (prefers-reduced-motion: reduce) {
   .about-image img,
   .about-card,

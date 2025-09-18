@@ -17,41 +17,27 @@ const Body = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Function to handle CV download
   const handleDownloadCV = () => {
-    // Option 1: If you have a CV file in your public folder
+
     const link = document.createElement('a');
-    link.href = '/Tejindra_Rai_CV.pdf'; // Make sure this path matches your CV file location
+    link.href = '/Tejindra_Rai_CV.pdf'; 
     link.download = 'Tejindra_Rai_CV.pdf';
     link.click();
-    
-    // Option 2: If you want to open CV in a new tab instead
-    // window.open('/cv/Tejindra_Rai_CV.pdf', '_blank');
-    
-    // Option 3: If you're using React Router and have a CV page
-    // navigate('/cv');
+
   };
 
-  // Function to handle contact navigation
   const handleContactInfo = () => {
-    // Option 1: Scroll to contact section on same page
+
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
-    
-    // Option 2: If you're using React Router to navigate to contact page
-    // navigate('/contact');
-    
-    // Option 3: Open email client
-    // window.location.href = 'mailto:your-email@example.com';
   };
 
   return (
     <section id="hero">
       <div className="hero-container">
         
-        {/* Left Side - Profile Photo */}
         <div className="profile-section">
           <div className="profile-image-wrapper">
             <div className="profile-image">
@@ -72,7 +58,6 @@ const Body = () => {
           </div>
         </div>
 
-        {/* Right Side - Content */}
         <div className="content-section">
           <div className="greeting">
             <span>Hello, I'm</span>
@@ -86,7 +71,6 @@ const Body = () => {
             <span className="role-text">{roles[currentRole]}</span>
           </div>
 
-          {/* Action Buttons */}
           <div className="action-buttons">
             <button 
               className="btn-primary"
@@ -102,7 +86,6 @@ const Body = () => {
             </button>
           </div>
 
-          {/* Social Links */}
           <div className="social-links">
             <a
               href="https://www.linkedin.com/in/tejindra-rai/"

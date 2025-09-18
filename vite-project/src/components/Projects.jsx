@@ -28,7 +28,6 @@ const Projects = () => {
   },
   ];
 
-  // Animation on scroll
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -50,7 +49,6 @@ const Projects = () => {
 
   const handleProjectClick = (link) => {
     if (link === "#") {
-      // For placeholder links, you could show a modal or message
       alert("Project details coming soon!");
     } else {
       window.open(link, '_blank', 'noopener,noreferrer');

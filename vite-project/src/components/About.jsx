@@ -6,7 +6,6 @@ const About = React.memo(() => {
   return (
     <section id="about" className="about">
       <div className="about-container">
-        {/* Left - Image */}
         <div className="about-image">
           <img
             src="/myself.jpg"
@@ -16,7 +15,6 @@ const About = React.memo(() => {
           />
         </div>
 
-        {/* Right - Content */}
         <div className="about-content">
           <h2>About Me</h2>
 

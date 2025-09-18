@@ -88,16 +88,13 @@ const Experience = () => {
   return (
     <section id="experience">
       <div className="experience-container">
-        {/* Header */}
         <div className="experience-header">
           <p className="subtitle">Explore My</p>
           <h2>Experience</h2>
           <p>Technical skills and professional journey in web development</p>
         </div>
 
-        {/* Skills Categories */}
         <div className="skills-categories">
-          {/* Frontend Development */}
           <div className="skill-category">
             <h3 className="category-title">Frontend Development</h3>
             <div className="skills-list">
@@ -113,7 +110,6 @@ const Experience = () => {
             </div>
           </div>
 
-          {/* Backend Development */}
           <div className="skill-category">
             <h3 className="category-title">Backend Development</h3>
             <div className="skills-list">
@@ -131,7 +127,6 @@ const Experience = () => {
         </div>
 
 
-        {/* Call to Action */}
         <div className="experience-cta">
           <div className="cta-content">
             <h3>Ready to Collaborate?</h3>

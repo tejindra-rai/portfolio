@@ -96,7 +96,6 @@ const Contact = () => {
             </a>
           </div>
 
-          {/* Contact Form */}
           <div className="contact-form">
             <form onSubmit={handleSubmit}>
               <div className="form-row">

@@ -8,15 +8,13 @@ const NavigationBar = () => {
     e.preventDefault();
     e.stopPropagation();
     
-    // Close mobile menu first
     setIsMenuOpen(false);
     
-    // Add a small delay to ensure menu closes before scrolling
     setTimeout(() => {
       const section = document.getElementById(id);
       
       if (section) {
-        const yOffset = -80; // navbar height
+        const yOffset = -80;
         const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({ top: y, behavior: 'smooth' });
       } else {
@@ -36,13 +34,12 @@ const NavigationBar = () => {
           <a 
             href="#hero"
             onClick={(e) => handleScroll(e, 'hero')}
-            onTouchStart={() => {}} // Enable touch events
+            onTouchStart={() => {}}
           >
             <p>Tejindra</p>
           </a>
         </div>
         
-        {/* Hamburger Menu Button */}
         <button 
           className={`hamburger ${isMenuOpen ? 'open' : ''}`}
           onClick={toggleMenu}
@@ -53,14 +50,12 @@ const NavigationBar = () => {
           <span></span>
         </button>
 
-        {/* Navigation Links */}
         <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
           <li>
             <a 
               href="#about"
               onClick={(e) => handleScroll(e, 'about')}
               onTouchEnd={(e) => {
-                // Prevent double firing on mobile
                 e.preventDefault();
                 handleScroll(e, 'about');
               }}
@@ -106,7 +101,6 @@ const NavigationBar = () => {
           </li>
         </ul>
 
-        {/* Overlay for mobile menu */}
         {isMenuOpen && <div className="overlay" onClick={toggleMenu}></div>}
       </div>
     </nav>
